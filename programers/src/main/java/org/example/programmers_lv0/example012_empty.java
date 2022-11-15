@@ -1,10 +1,10 @@
-package org.example.programers;
+package org.example.programmers_lv0;
 
 
 import java.util.Comparator;
 import java.util.TreeSet;
 
-public class example011_empty implements Comparator{
+public class example012_empty implements Comparator{
 
 
     /*
@@ -31,7 +31,7 @@ public class example011_empty implements Comparator{
         int answer= 0;
 
         TreeSet set1 = new TreeSet();
-        TreeSet set2 = new TreeSet(new example011_empty());
+        TreeSet set2 = new TreeSet(new example012_empty());
 
         for(int i : input){
             set1.add(new Integer(i));

@@ -1,4 +1,4 @@
-package org.example.programers;
+package org.example.programmers_lv0;
 
 public class example002 {
 

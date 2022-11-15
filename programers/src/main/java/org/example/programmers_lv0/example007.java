@@ -1,7 +1,6 @@
-package org.example.programers;
+package org.example.programmers_lv0;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class example007 {
 
