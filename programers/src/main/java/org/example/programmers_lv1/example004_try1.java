@@ -22,7 +22,8 @@ public class example004_try1 {
 //                " AbC De    FgHi ";
 //                "  abc de    fghi     ";
 //                "  tRy      hello      WORLD    ";
-          "try hello world";
+        "  010  4196  0137  010  4196  0137  010  4196  0137  ";
+//          "try    hello world";
 //        "TrY HeLlO WoRlD";
 
         System.out.println("input : [" + input+"]");
@@ -42,6 +43,14 @@ public class example004_try1 {
         StringBuilder sb = new StringBuilder();
 
         String [] strarr = ss.split(" ", -1);
+
+        System.out.println("====================================");
+        for(String arrr : strarr){
+            System.out.println("{"+arrr+"}");
+        }
+        System.out.println("====================================");
+
+
         for (int in = 0; in < strarr.length; in++) {
             String chk = strarr[in];
             String [] chkarr = chk.split("");

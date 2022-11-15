@@ -8,7 +8,7 @@ package org.example.programmers_lv1;
 import java.util.HashMap;
 import java.util.Set;
 
-public class example005 {
+public class example005_fail {
 
     /*
         입력된 문자열을 숫자로 출력하는 코드를 작성해라.

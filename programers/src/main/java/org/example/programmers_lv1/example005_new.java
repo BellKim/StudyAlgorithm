@@ -8,7 +8,7 @@ package org.example.programmers_lv1;
 import java.util.HashMap;
 import java.util.Set;
 
-public class example005 {
+public class example005_new {
 
     /*
         입력된 문자열을 숫자로 출력하는 코드를 작성해라.
@@ -48,37 +48,14 @@ public class example005 {
     static int solution(String s) {
         int answer=0;
 
-        StringBuilder res11 = new StringBuilder();
+        String[] num = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-        HashMap<String, String> numberMap = new HashMap<String, String>();
-//        numberMap.put("0", "zero");numberMap.put("1", "one");numberMap.put("2", "two");numberMap.put("3", "three");numberMap.put("4", "four");numberMap.put("5", "five");numberMap.put("6", "six");numberMap.put("7", "seven");numberMap.put("8", "eight");numberMap.put("9", "nine");numberMap.put("zero", "0");
-        numberMap.put("one", "1");numberMap.put("two", "2");numberMap.put("three", "3");numberMap.put("four", "4");numberMap.put("five", "5");numberMap.put("six", "6");numberMap.put("seven", "7");numberMap.put("eight", "8");numberMap.put("nine", "9");
-
-
-        System.out.println(numberMap.keySet());
-
-        Set<String> numStr = numberMap.keySet();
-
-        String[] strs = s.split("");
-        String temp = "";
-        for(String str : strs) {
-            if(str.matches("[0-9]")) {
-                res11.append(str);
-                continue;
-            }
-            temp += str;
-            if(numberMap.containsKey(temp))  {
-                res11.append(numberMap.get(temp));
-                temp = "";
-            }
+        //숫자가 0~9까지 10개로 정해져 있으므로 i<10
+        for(int i=0; i<10; i++){
+            s = s.replace(num[i], Integer.toString(i));
         }
 
-//        answer =  Integer.parseInt(res11.toString());
-        System.out.println(res11.toString());
-
-        answer =  Integer.parseInt(res11.toString().trim());
-
-        System.out.println(answer);
+        answer = Integer.parseInt(s);
 
 
         return answer;
