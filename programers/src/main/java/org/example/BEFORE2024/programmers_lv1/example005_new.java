@@ -1,12 +1,9 @@
-package org.example.programmers_lv1;
+package org.example.BEFORE2024.programmers_lv1;
 /*
     이상한 문자 만들기
 
     https://school.programmers.co.kr/learn/courses/30/lessons/81301
  */
-
-import java.util.HashMap;
-import java.util.Set;
 
 public class example005_new {
 

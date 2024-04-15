@@ -1,4 +1,4 @@
-package org.example.programmers_lv0;
+package org.example.BEFORE2024.programmers_lv0;
 
 public class example002 {
 

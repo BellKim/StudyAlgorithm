@@ -1,4 +1,4 @@
-package org.example.programmers_lv1;
+package org.example.BEFORE2024.programmers_lv1;
 /*
     이상한 문자 만들기
 

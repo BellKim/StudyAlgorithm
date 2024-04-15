@@ -1,4 +1,4 @@
-package org.example.programmers_lv1;
+package org.example.BEFORE2024.programmers_lv1;
 /*
     평균구하기
     https://school.programmers.co.kr/learn/courses/30/lessons/12944

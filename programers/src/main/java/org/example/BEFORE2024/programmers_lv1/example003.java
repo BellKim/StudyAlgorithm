@@ -1,4 +1,4 @@
-package org.example.programmers_lv1;
+package org.example.BEFORE2024.programmers_lv1;
 /*
     직사각형 별찍기
     https://school.programmers.co.kr/learn/courses/30/lessons/12969
