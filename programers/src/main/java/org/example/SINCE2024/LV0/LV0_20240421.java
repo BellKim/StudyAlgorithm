@@ -1,5 +1,9 @@
 package org.example.SINCE2024.LV0;
 
+
+
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,13 +19,12 @@ public class LV0_20240421 {
         //solution5
 //        int[] res0 = solution5(1,2,3,4);
 //        int[] res1 = solution5(9,2,1,3);
-        int[] res2 = solution5(1,5,4,5);
+//        int[] res2 = solution5(1,5,4,5);
 //        int[] res3 = solution5(1,2,3,4);
 
-        for (int re: res2) {
-            System.out.println(re);
-        }
-
+//        for (int re: res2) {
+//            System.out.println(re);
+//        }
     }
 
 
