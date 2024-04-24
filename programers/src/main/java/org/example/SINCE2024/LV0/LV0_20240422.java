@@ -1,8 +1,6 @@
 package org.example.SINCE2024.LV0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -12,7 +10,7 @@ public class LV0_20240422 {
 
 //        System.out.println(solution1("bus"));
 
-        System.out.println(solution2("205"));
+//        System.out.println(solution2("205"));
 
     }
 
@@ -70,8 +68,23 @@ public class LV0_20240422 {
 //        answer = stringBuilder.toString();
 //        return answer;
 
-        return Arrays.stream(rsp.split("")).map(s -> s.equals("2") ? "0" : s.equals("0") ? "5" : "2").collect(Collectors.joining());
+//        return Arrays.stream(rsp.split("")).map(s -> s.equals("2") ? "0" : s.equals("0") ? "5" : "2").collect(Collectors.joining());
 
+
+        StringBuilder sb = new StringBuilder();
+
+        Map<String, String> gameMap = new HashMap<>();
+        gameMap.put("2","0");
+        gameMap.put("0","5");
+        gameMap.put("5","2");
+
+        for (int k = 0; k < rsp.length() ; k++) {
+            sb.append(gameMap.get(rsp.substring(k, k+1)));
+        }
+
+//        sb.append()
+
+        return sb.toString();
 
     }
 
