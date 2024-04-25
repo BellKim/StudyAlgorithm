@@ -1,5 +1,7 @@
 package org.example.SINCE2024.LV0;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,10 +25,19 @@ public class LV0_20240426 {
 //         [1, 1, 1, 1, 1, 1],
 //         [1, 1, 1, 1, 1, 1],
 //         [1, 1, 1, 1, 1, 1]] 0
-        int[][] board1 ={{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}};
-        int[][] board2 ={{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 0, 0}};
-        int[][] board3 ={{1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}};
-        System.out.println(solution1(board1));
+//        int[][] board1 ={{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}};
+//        int[][] board2 ={{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 0, 0}};
+//        int[][] board3 ={{1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 1}};
+//        System.out.println(solution1(board1));
+
+        String[] quiz1 = {"3 - 4 = -3", "5 + 6 = 11"};
+        String[] quiz2 = {"19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"};
+        for (String res: solution2(quiz1)) {
+            System.out.println(res);
+        }
+
+
+
 
     }
     /*
@@ -130,4 +141,79 @@ public class LV0_20240426 {
         }
         return answer;
     }
+
+
+
+
+    /*
+    https://school.programmers.co.kr/learn/courses/30/lessons/120907
+    OX퀴즈
+    덧셈, 뺄셈 수식들이 'X [연산자] Y = Z' 형태로 들어있는 문자열 배열 quiz가 매개변수로 주어집니다.
+    수식이 옳다면 "O"를 틀리다면 "X"를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+
+    제한사항
+    연산기호와 숫자 사이는 공백이 존재한다.
+    음수 표시시 마이너스기호와 숫자 사이에는 공백이 존재하지 않는다.
+    3 + 2 = 8
+    3 + -2 = 1 << 이런식
+    연산자는 + 와 - 둘중 하나로 한정한다.
+
+    예시:
+        ["3 - 4 = -3", "5 + 6 = 11"]	["X", "O"]
+        ["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"]	["O", "O", "X", "O"]
+
+    String 배열내의 수식을 읽는 로직을 구성해야 할 것 으로 보인다.
+    split으로 수식과 수를 구분지어두고 수식과 숫자 사이를 모두 공백으로 구분하기때문에 " " 으로 split 한다.
+    문자열 배열을 리스트에 저장한 후에  ( String[] ) 리스트에 있는 모든 수식을 검사한뒤에 결과를 리턴한다.
+    수식의 형태는 정해져 있다 (숫자 [연산자 +,-] 숫자 = 숫자 )  리스트 하나당 5개 배열로 저장된다.
+    순서에 맞게 계산식을 검사한뒤 answerList에 저장하면 된다.
+     */
+
+    public static String[] solution2(String[] quiz) {
+        String[] answer = {};
+        List<String[]> stringList = new ArrayList<String[]>();
+        List<String> answerList = new ArrayList<String>();
+
+        //분리된 수식 리스트업
+        for (String strQuiz: quiz) {
+            String[] splitString = strQuiz.split(" ");
+            stringList.add(splitString);
+        }
+        // 수식계산
+        for (String[] strQuiz: stringList) {
+            if(strQuiz[1].equals("+")){
+                if(Integer.parseInt(strQuiz[0]) + Integer.parseInt(strQuiz[2]) == Integer.parseInt(strQuiz[4])) { //정답
+                    answerList.add("O");
+                }else { //오답  X
+                    answerList.add("X");
+                }
+
+            }else {
+                if(Integer.parseInt(strQuiz[0]) - Integer.parseInt(strQuiz[2]) == Integer.parseInt(strQuiz[4])) { //정답
+                    answerList.add("O");
+                }else { //오답  X
+                    answerList.add("X");
+                }
+            }
+        }
+
+        answer = new String[answerList.size()];
+        for (int m = 0; m < stringList.size(); m++) {
+            answer[m] = answerList.get(m);
+        }
+
+        return answer;
+    }
+
+
+    @Test
+    public void stringTest(){
+        String quizString = "333 - 444 = -3555";
+        String[] test = quizString.split(" ");
+        for (String str: test) {
+            System.out.println(str);
+        }
+    }
+
+
 }
