@@ -60,6 +60,34 @@ public class LV0_20240509 {
 
 
 
+    /*
+        https://school.programmers.co.kr/learn/courses/30/lessons/120848#
+        팩토리얼
+
+     */
+
+    public static int solution2(int n) {
+        int answer = 1;
+
+        int resPacto = 1;
+        for(int i=1; i<=10; i++){
+            resPacto = pacto(i);
+            if(resPacto == n){
+                return i;
+            }else if(resPacto > n){
+                return i-1;
+            }
+        }
+        return answer;
+    }
+    public static int pacto(int n){
+        if(n == 1)
+            return 1;
+        return n * pacto(n-1);
+    }
+
+
+
 
 
 }
