@@ -104,30 +104,9 @@ public class LV0_20240520 {
         copyArr = centerpositionArr.clone();
         copyArr[0] += movePosition[0];
         copyArr[1] += movePosition[1];
-
-//        if(copyArr[0] < 0) {// x가 up이 범위를 벗어날때
-//            copyArr[0] = 0;
-//            copyArr[0] -= centerpositionArr[0];
-//        }else if(copyArr[0] > (centerpositionArr[0] + (int)board[0]/2)){ //
-//            copyArr[0] = centerpositionArr[0] + (int)board[0]/2;
-//            copyArr[0] -= centerpositionArr[0];
-//        }else{//범위내에 있을때
             copyArr[0] -= centerpositionArr[0];
-//        }
-
-
-//        if(copyArr[1] < 0 ) {// y 가 down으로 범위를 벗어날때
-//            copyArr[1] = 0;
-//            copyArr[1] -= centerpositionArr[1];
-//        }else if(copyArr[1] > (centerpositionArr[1] + (int)board[1]/2)){
-//            copyArr[1] = centerpositionArr[1] + (int)board[1]/2;
-//            copyArr[1] -= centerpositionArr[1];
-//        } else{//범위내에 있을때
             copyArr[1] -= centerpositionArr[1];
-//        }
-
         answer = copyArr;
-
         return answer;
     }
 
