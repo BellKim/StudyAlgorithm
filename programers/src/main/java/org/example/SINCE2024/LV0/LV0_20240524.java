@@ -1,5 +1,9 @@
 package org.example.SINCE2024.LV0;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class LV0_20240524 {
     public static void main(String[] args) {
 
@@ -24,7 +28,7 @@ public class LV0_20240524 {
     public static String solution1(String my_string) {
         String answer = "";
         String[] words = my_string.toLowerCase().split("");
-        List<String> stringlist = new ArrayList<String>();
+        List<String> stringlist = new ArrayList<>();
         for (String val: words){
             stringlist.add(val);
         }
