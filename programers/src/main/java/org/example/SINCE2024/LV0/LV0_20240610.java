@@ -2,10 +2,9 @@ package org.example.SINCE2024.LV0;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
-public class LV0_20240609 {
+public class LV0_20240610 {
 
     public static void main(String[] args) {
 
@@ -13,61 +12,82 @@ public class LV0_20240609 {
         String solutioin2 = "abdc";	        //"abcd"
         String solutioin3 = "hello";	    //"eho"
 
-        System.out.println(solution1(solutioin1));
-        System.out.println(solution1(solutioin2));
-        System.out.println(solution1(solutioin3));
+        int num1 = 3;	int totla1 = 12;    //[3, 4, 5]
+        int num2 = 5;	int totla2 = 15;    //[1, 2, 3, 4, 5]
+        int num3 = 4;	int totla3 = 14;    //[2, 3, 4, 5]
+        int num4 = 5;	int totla4 = 5;     //[-1, 0, 1, 2, 3]
+        int num5 = 0;	int totla5 = 0;     //[0]
+        int num6 = 6;	int totla6 = 3;     //
+        int num7 = 5;	int totla7 = 0;     //[-2,-1,0,1,2]
+
+
+
+        printarr(solution1(num1, totla1));
+        printarr(solution1(num2, totla2));
+        printarr(solution1(num3, totla3));
+        printarr(solution1(num4, totla4));
+        printarr(solution1(num5, totla5));
+        printarr(solution1(num6, totla6));
+        printarr(solution1(num7, totla7));
+
 
     }
 
-    /*    https://school.programmers.co.kr/learn/courses/30/lessons/120896
+    public static void printarr(int[] num){
+        for (int i = 0; i < num.length; i++) {
+            System.out.print(num[i] + ", ");
+        }
+        System.out.println();
+    }
 
-        한 번만 등장한 문자
 
-        문자열 s가 매개변수로 주어집니다.
-        s에서 한 번만 등장하는 문자를 사전 순으로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요.
-        한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
+    /*    https://school.programmers.co.kr/learn/courses/30/lessons/120923
 
-        1. 문자열을 비교하기위해 전부 한자씩 배열에 넣는다.
-        2. 문자열의 갯수를 산출하기 위해서 map에 갯수를 산출한다.
-        3. hashmap 의 키를 순차적으로 비교하여 키값이 1인문자열을 리스트에 넣고
-        4. 리스트를 사전순으로 소트
-        5. 소트된 문자열들을 answer 로 리턴한다.
+        연속된 수의 합
+
+        연속된 세 개의 정수를 더해 12가 되는 경우는 3, 4, 5입니다.
+        두 정수 num과 total이 주어집니다.
+        연속된 수 num개를 더한 값이 total이 될 때, 정수 배열을 오름차순으로 담아 return하도록 solution함수를 완성해보세요.
+
+        총합과 연속된 n개의 수의 합을 구하는 문제이다.
+        다양한 케이스로 구하면 된다.
+        1개 연속수, 총합 0
+        5개 연속수, 총합 0
+        의 테스트 케이스까지 수행해보자.
+
      */
 
 
-    public static String solution1(String s) {
-        String answer = "";
+    public static int[] solution1(int num, int total) {
+//        int[] answer = new int[num];
+        int[] answer = {};
 
-        String[] words = s.split("");
+        List<Integer> list = new ArrayList<>();
+        int temp = 0;
+        int status = 0;
+        int endRange = 0;
 
-        HashMap<String, Integer> countHash = new HashMap<>();
 
-        for (String word : words) {
-            if (countHash.containsKey(word)) {
-                countHash.put(word, countHash.get(word) + 1);
+        for (int i = 501; i > (-total-num); i--) {
+            for(int k = i; k > i-num; k--){
+                list.add(k);
+                temp += k;
+            }
+            if(temp == total){
+                status = i;
+                break;
             }else{
-                countHash.put(word, 1);
+                list = new ArrayList<>();
+                temp = 0;
+                status = 0;
             }
         }
 
-        List<String> result = new ArrayList<>();
-
-        String[] hashset = countHash.keySet().toArray(new String[0]);
-
-        for (int i = 0; i < hashset.length; i++) {
-            if(countHash.get(hashset[i]) == 1 ){
-                result.add(hashset[i]);
-            }
+        Collections.reverse(list);
+        if(list.isEmpty()){
+            list.add(0);
         }
-
-        if(!result.isEmpty()) {
-            Collections.sort(result);
-            StringBuilder sb = new StringBuilder();
-            for (String word : result) {
-                sb.append(word);
-            }
-            answer = sb.toString();
-        }
+        answer = list.stream().mapToInt(i -> i).toArray();
 
         return answer;
     }
