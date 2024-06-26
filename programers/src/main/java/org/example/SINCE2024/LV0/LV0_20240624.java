@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class LV0_20250624 {
+public class LV0_20240624 {
     public static void main(String[] args) {
         int a1= 7;	int b1 = 20;    //	1
         int a2= 11;	int b2 = 22;    //	1
@@ -34,7 +34,7 @@ public class LV0_20250624 {
     /*   https://school.programmers.co.kr/learn/courses/30/lessons/120878
         유한소수 판별하기
 
-        
+
         소수점 아래 숫자가 계속되지 않고 유한개인 소수를 유한소수라고 합니다.
         분수를 소수로 고칠 때 유한소수로 나타낼 수 있는 분수인지 판별하려고 합니다.
         유한소수가 되기 위한 분수의 조건은 다음과 같습니다.

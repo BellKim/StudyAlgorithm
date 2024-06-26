@@ -4,7 +4,7 @@ package org.example.SINCE2024.LV0;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LV0_20250621 {
+public class LV0_20240621 {
     public static void main(String[] args) {
 //        my_str	n	result
         String my_str1 = "abc1Addfggg4556b";	int n1 = 6;	//["abc1Ad", "dfggg4", "556b"]

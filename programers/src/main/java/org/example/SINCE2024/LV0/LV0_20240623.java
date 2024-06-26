@@ -1,7 +1,7 @@
 package org.example.SINCE2024.LV0;
 
 
-public class LV0_20250623 {
+public class LV0_20240623 {
     public static void main(String[] args) {
         int[] sides1 = {1, 2};//	1
         int[] sides2 = {3, 6};//	5
