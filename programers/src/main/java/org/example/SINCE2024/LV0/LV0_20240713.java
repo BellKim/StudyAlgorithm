@@ -31,13 +31,9 @@ public class LV0_20240713 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < myStringArray.length; i++) {
             if(myStringArray[i].equals("A")) {
-//                myStringArray[i] = "B";
                 sb.append("B");
             } else if (myStringArray[i].equals("B")) {
-//                myStringArray[i] = "A";
                 sb.append("A");
-            }else{
-
             }
         }
 
