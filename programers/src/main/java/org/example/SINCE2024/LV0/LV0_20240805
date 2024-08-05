@@ -1,0 +1,32 @@
+package org.example.SINCE2024.LV0;
+
+
+import java.util.*;
+
+public class LV0_20240805 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+
+        System.out.println(a+b);
+    }
+
+
+
+    /*  https://school.programmers.co.kr/learn/courses/30/lessons/181946
+        문자열 붙여서 출력하기 
+
+        스캐너로 입력받은 문자열을 연속해서 출력하게만 하면 되는것이다.
+
+        저는... 내일도 야근이라 참가가 안될지도 모릅니다 ㅠㅠㅠ
+
+     */
+
+
+
+
+
+}
+
