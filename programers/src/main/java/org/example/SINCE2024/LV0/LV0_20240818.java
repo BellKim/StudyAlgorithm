@@ -39,7 +39,7 @@ public class LV0_20240818 {
      */
     public static String solution1(String my_string, int[][] queries) {
         String answer = "";
-        
+
         StringBuilder sb = new StringBuilder(my_string);
 
         for (int i = 0; i < queries.length; i++) {
